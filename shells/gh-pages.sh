@@ -10,7 +10,7 @@ pnpm build
 
 # push
 
-cd dist 
+cd dist/function-to-class
 
 git init
 git add .
