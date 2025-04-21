@@ -2,12 +2,12 @@
 
 一个基于 AI + 提示词的代码转换工具
 
-[![code-tools](https://www.gausszhou.top/static/data/i/github/code-tools.webp)](https://gausszhou.github.io/code-tools/)
+[![code-tools](https://www.gausszhou.top/static/data/github/code-tools.webp)](https://gausszhou.github.io/code-tools/)
 
 
 ## Dependencies
 
-注意：当前版本暂时不支持配置接口地址，请在本地安装 `Ollama` 并部署 `qwen2.5-coder:7b`
+注意：当前版本暂时不支持配置接口地址，请在本地安装 `Ollama` 并部署 `qwen2.5-coder:7b`  
 注意：如遇到跨域问题，请配置环境变量 `OLLAMA_ORIGINS` 为 `*`
 
 ## Features
