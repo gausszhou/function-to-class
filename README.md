@@ -1,6 +1,6 @@
 # code-tools
 
-基于 AI + 提示词的代码转换工具
+一个基于 AI + 提示词的代码转换工具
 
 [![code-tools](https://www.gausszhou.top/static/data/i/github/code-tools.webp)](https://gausszhou.github.io/code-tools/)
 
