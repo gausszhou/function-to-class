@@ -1,15 +1,16 @@
 import { defineConfig } from "vite";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
+import 'dotenv/config';
 
 export default defineConfig(() => ({
-  base: "/function-to-class/",
+  base: process.env.VITE_BASE_URL || '/',
   plugins: [nodePolyfills()],
   clearScreen: false,
   server: {
-    port: 1420,
+    port: 1998,
     strictPort: true,
   },
   build: {
-    outDir: "./dist/function-to-class/",
+    outDir: process.env.VITE_BUILD_DIR || 'dist',
   },
 }));
