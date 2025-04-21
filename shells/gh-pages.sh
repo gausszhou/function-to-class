@@ -10,12 +10,12 @@ pnpm build
 
 # push
 
-cd dist/function-to-class
+cd dist
 
 git init
 git add .
 
-git remote add origin git@github.com:gausszhou/function-to-class.git
+git remote add origin git@github.com:gausszhou/code-tools.git
 
 git checkout -b gh-pages
 time=$(date "+%Y-%m-%d %H:%M")
