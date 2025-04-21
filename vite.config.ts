@@ -13,4 +13,7 @@ export default defineConfig(() => ({
   build: {
     outDir: process.env.VITE_BUILD_DIR || 'dist',
   },
+  resolve: {
+    extensions: ['.js', '.ts', '.json', '.jsx', '.tsx', '.css', '.txt', '.md'] // 添加 .txt 扩展名
+  }
 }));

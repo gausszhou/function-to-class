@@ -111,6 +111,7 @@
 .menu-container {
     width: 150px;
     height: 100%;
+    padding-top: 4px;
 }
 
 .tool-container {
@@ -118,13 +119,13 @@
     width: calc(100% - 150px);
 }
 
-#editor-double {
+#editor-container {
     width: 100%;
     height: calc(100% - 30px);
     display: flex;
 }
 
-#editor-double .container {
+#editor-container .container {
     width: 50%;
     height: 100%;
 }
@@ -134,11 +135,21 @@
     align-items: center;
 }
 
+.app-button-group {
+    display: flex;
+    align-items: center;
+}
 .app-button {
     border: none;
     background-color: transparent;
     color: #cccccc;
     cursor: pointer;
     font-size: 14px;
-    border-radius: 2px;
+    border-radius: 4px;
+    height: 24px;
+}
+
+.app-button:hover {
+    background-color: #424242;
+    color: #ffffff;
 }
