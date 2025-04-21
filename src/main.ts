@@ -1,4 +1,5 @@
 import "./styles/index.css";
+import "./styles/app.css";
 import localforage from "localforage";
 import { processContent } from "./utils/transform";
 import {
@@ -7,7 +8,7 @@ import {
   createEditorContainer,
   createEditorInstance,
   createEditorModel,
-} from "./mirror";
+} from "./editor/index";
 
 const codeFunctionn2Class = `function Test() {
   this.a = 1;
@@ -26,31 +27,30 @@ Test.prototype.add = function(a: number, b: number) {
 
 const $container2 = createEditorContainer();
 const $container1 = createEditorContainer();
-const editor1 = createEditorInstance($container1, createEditorModel(""));
-const editor2 = createEditorInstance($container2, createEditorModel("")); // 第二个编辑器为只读
+const model1 = createEditorModel("", "typescript");
+const model2 = createEditorModel("", "typescript");
+const editor1 = createEditorInstance($container1, model1);
+const editor2 = createEditorInstance($container2, model2); // 第二个编辑器为只读
 
 async function save() {
-  const value1 = editor1.state.doc.toString();
-  await localforage.setItem('code', value1);
+  const value1 = model1.getValue();
+  await localforage.setItem('function-to-class', value1);
   console.log("\t[INFO]\t" + "Save Success");
 }
 
 async function fetch() {
   console.log("fetch");
-  await localforage.getItem('code').then((value) => {
-    editor1.setState(
-      createEditorModel((value as string) || codeFunctionn2Class)
-    );
+  await localforage.getItem('function-to-class').then((value) => {
+    model1.setValue(value as string || codeFunctionn2Class)
   });
   console.log("\t[INFO]\t" + "Fetch Success");
 }
 
 async function transform() {
-  const value1 = editor1.state.doc.toString();
-  console.log(value1);
+  const value1 = model1.getValue();
   try {
     const [value, flag] = await processContent(value1);
-    editor2.setState(createEditorModel(value));
+    editor2.setValue(value);
     if (flag === "unrealized") {
       console.log("\t[WARN]\t" + "Format Unrealized");
     }
@@ -58,13 +58,39 @@ async function transform() {
       console.log("\t[INFO]\t" + "Format Success");
     }
   } catch (error: any) {
-    editor2.setState(createEditorModel(""));
+    editor2.setValue('');
     console.log("\t[Error]\t" + error.message);
   }
 }
 
+function render() {
+  const app = `
+  <div class="app-container screenshot">
+      <div class="app-home">
+        <div class="app-header">
+          <span class="app-icon-button">
+            <i class="icon red"></i>
+            <i class="icon yellow"></i>
+            <i class="icon green"></i>
+          </span>
+          <button class="app-button ml-1x" id="save">Save</button>
+          <button class="app-button ml-1x" id="transform">Transform</button>
+        </div>
+        <div class="app-main">
+          <div class="menu-container">
+          </div>
+          <div class="tool-container">
+            <div id="editor-double"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `
+  document.getElementById("app")!.innerHTML = app;  
+}
+
 async function onWindowLoad() {
-  console.log("onWindowLoad");
+  render();
   addEditorIntoManageList(editor1);
   addEditorIntoManageList(editor2);
   addContainer(

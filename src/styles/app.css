@@ -1,0 +1,144 @@
+.app-container {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+}
+
+@media screen and (min-width: 960px) {
+    .app-container {
+        width: 800px;
+        height: 450px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .app-container {
+        width: 960px;
+        height: 480px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .app-container {
+        width: 1200px;
+        height: 600px;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    .app-container {
+        width: 1280px;
+        height: 640px;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+    .app-container {
+        width: 1366px;
+        height: 678px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .app-container {
+        width: 1440px;
+        height: 720px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .app-container {
+        width: 1600px;
+        height: 800px;
+    }
+}
+
+.screenshot .app-home {
+    box-shadow: 1px 1px 10px #1e1e1e;
+}
+
+.app-home {
+    width: 100%;
+    height: 100%;
+    background-color: #272822;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 1px 1px 10px #1e1e1e;
+    overflow: hidden;
+}
+
+.app-header {
+    font-family: monospace;
+    padding: 0 12px;
+    line-height: 30px;
+    height: 30px;
+    color: #cccccc;
+    background-color: #1e1e1e;
+    display: flex;
+}
+
+.app-header .icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.app-header .icon.red {
+    background-color: #ff5f56;
+}
+
+.app-header .icon.yellow {
+    background-color: #ffbd2e;
+}
+
+.app-header .icon.green {
+    background-color: #27c93f;
+}
+
+.app-main {
+    flex: 1;
+    height: calc(100% - 30px);
+    display: flex;
+}
+
+.menu-container {
+    width: 150px;
+    height: 100%;
+}
+
+.tool-container {
+    height: 100%;
+    width: calc(100% - 150px);
+}
+
+#editor-double {
+    width: 100%;
+    height: calc(100% - 30px);
+    display: flex;
+}
+
+#editor-double .container {
+    width: 50%;
+    height: 100%;
+}
+
+.app-icon-button {
+    display: flex;
+    align-items: center;
+}
+
+.app-button {
+    border: none;
+    background-color: transparent;
+    color: #cccccc;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 2px;
+}
