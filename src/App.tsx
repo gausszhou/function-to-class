@@ -10,7 +10,7 @@ import {
 import { ITool, tools } from "./config";
 import { OllamaService } from "./api/ollama";
 
-const CodeToolsApp: React.FC = () => {
+const App: React.FC = () => {
   const [currentTool, setCurrentTool] = useState<string>(
     localStorage.getItem('code-tools-tool') || tools[0].value
   );
@@ -109,7 +109,10 @@ const CodeToolsApp: React.FC = () => {
           </span>
           <div className="app-button-group">
             <button className="app-button" onClick={handleExecute}>
-              Execute
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 5V19L18 12L7 5Z" fill="currentColor" />
+              </svg>
+              <span>Execute</span>
             </button>
           </div>
         </div>
@@ -128,4 +131,4 @@ const CodeToolsApp: React.FC = () => {
   );
 };
 
-export default CodeToolsApp;
+export default App;

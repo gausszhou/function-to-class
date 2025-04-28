@@ -121,7 +121,7 @@
 
 #editor-container {
     width: 100%;
-    height: calc(100% - 30px);
+    height: 100%;
     display: flex;
 }
 
@@ -138,6 +138,7 @@
 .app-button-group {
     display: flex;
     align-items: center;
+
 }
 .app-button {
     border: none;
@@ -147,6 +148,9 @@
     font-size: 14px;
     border-radius: 4px;
     height: 24px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .app-button:hover {

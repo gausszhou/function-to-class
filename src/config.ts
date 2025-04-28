@@ -16,7 +16,7 @@ export interface ITool {
 
 export const tools: ITool[] = [
     {
-        label: "Function 2 Class",
+        label: "升级 Class",
         icon: "",
         value: "function-to-class",
         description: "ES5 Function 转换为 ES6 Class",
@@ -24,7 +24,7 @@ export const tools: ITool[] = [
         example: exampleF2C,
     },
     {
-        label: "Options 2 Setup",
+        label: "升级 Vue",
         icon: "",
         value: "options-to-composition",
         description: "Options 组件转换为 Composition API 组件",
@@ -32,7 +32,7 @@ export const tools: ITool[] = [
         example: exampleO2C,
     },
     {
-        label: "React Class 2 FC",
+        label: "升级 React",
         icon: "",
         value: "react-class-to-function",
         description: "Options 组件转换为 Composition API 组件",
