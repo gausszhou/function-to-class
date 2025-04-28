@@ -10,7 +10,7 @@ pnpm build
 
 # push
 
-cd dist
+cd dist/code-tools
 
 git init
 git add .
