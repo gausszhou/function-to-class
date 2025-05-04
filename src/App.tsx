@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-
 import {
   addContainer,
   addEditorIntoManageList,
@@ -97,24 +96,26 @@ const App: React.FC = () => {
       alert("执行失败，请检查控制台日志");
     }
   };
-
   return (
-    <div className="app-container screenshot">
+    <div className="app-container">
       <div className="app-home">
         <div className="app-header">
-          <span className="app-icon-button">
-            <i className="icon red"></i>
-            <i className="icon yellow"></i>
-            <i className="icon green"></i>
-          </span>
-          <div className="app-button-group">
-            <button className="app-button" onClick={handleExecute}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 5V19L18 12L7 5Z" fill="currentColor" />
-              </svg>
-              <span>Execute</span>
-            </button>
+          <div className="app-header-left">
+            <span className="app-icon-button">
+              <i className="icon red"></i>
+              <i className="icon yellow"></i>
+              <i className="icon green"></i>
+            </span>
+            <div className="app-button-group">
+              <button className="app-button" onClick={handleExecute}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 5V19L18 12L7 5Z" fill="currentColor" />
+                </svg>
+                <span>Execute</span>
+              </button>
+            </div>
           </div>
+          <span className="app-tips-text">使用时请在本地安装 Ollama 并部署 qwen2.5-coder:7b</span>
         </div>
         <div className="app-main">
           <div className="menu-container">
@@ -129,6 +130,6 @@ const App: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default App;

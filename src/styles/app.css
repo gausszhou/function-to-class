@@ -80,6 +80,12 @@
     color: #cccccc;
     background-color: #1e1e1e;
     display: flex;
+    justify-content: space-between;
+}
+
+.app-header-left {
+    display: flex;
+    align-items: center;
 }
 
 .app-header .icon {
