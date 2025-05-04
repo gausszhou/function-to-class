@@ -27,6 +27,10 @@ const App: React.FC = () => {
   useEffect(() => {
     renderPresetTools();
     renderEditor();
+    const tool = tools.find(tool => tool.value === currentTool);
+    if (tool) {
+      model1.current.setValue(tool.example || "");
+    }
   }, []);
 
   const renderPresetTools = () => {
