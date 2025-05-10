@@ -2,7 +2,7 @@
 
 一个基于 AI + 提示词的代码转换工具
 
-[![code-tools](https://www.gausszhou.top/static/data/github/code-tools.webp)](https://gausszhou.github.io/code-tools/)
+[![code-tools](https://www.gausszhou.top/static/data/github/code-tools/1.webp)](https://gausszhou.github.io/code-tools/)
 
 
 ## Dependencies
